@@ -1,0 +1,12 @@
+package modelo;
+
+public class Dados implements Senha{
+
+	@Override
+	public void senha() {
+		System.out.println();
+		System.out.println("Fazendo leitura dos dados do cartão...................");
+        System.out.println("Por favor aguarde.....................................");
+        System.out.println("Dados Verificados!!!!");
+	}
+}
