@@ -1,0 +1,28 @@
+package caixaeletronico;
+
+import modelo.Cartão;
+import modelo.Dados;
+import modelo.GerSenha;
+import modelo.Senha1;
+
+public class Aplicacao {
+	public static void main(String[] args) {
+		
+		Cartão cartao = new Cartão();
+		
+		GerSenha banco = new GerSenha();
+		
+		banco.setSenha(cartao);
+		banco.senha();
+		
+		Dados dados = new Dados();
+		
+		banco.setSenha(dados);
+		banco.senha();
+		
+		Senha1 senha = new Senha1();
+		
+		banco.setSenha(senha);
+		banco.senha();
+	}
+}
