@@ -1,0 +1,127 @@
+package modelo;
+
+import java.util.Scanner;
+
+public class Senha1 implements Senha{
+	
+	Scanner scan = new Scanner(System.in);
+	
+	int senha = 123;
+	float deposito = 10000;
+	float retirada;
+	float saldo = 10000f;
+	float extrato;
+	int opc;
+	int notas;
+	
+	public int getSenha() {
+		return senha;
+	}
+	
+	public int getNotas() {
+		return notas;
+	}
+	
+	@Override
+	public void senha() {
+		System.out.println();
+		System.out.println("Por favor, digite a senha do cartão!");
+		senha = Integer.parseInt(scan.nextLine());
+		System.out.println();
+		if(senha == 123) {
+			System.out.println("1 Depósito " + "|" + " 2 Saldo " + "|" + " 3 Extrato " + "|" + " 4 Retirada");
+			opc = Integer.parseInt(scan.nextLine());
+			System.out.println();
+			//A escolha do menu, é feita através de uma condicional.
+			if(opc == 1) {
+			System.out.println("Digite o valor para depósito R$ ");
+			deposito = Float.parseFloat(scan.nextLine());
+			System.out.println();
+			System.out.println("Valor depositado foi R$ " + deposito);
+			System.out.println();
+			}else if (opc == 2) {
+			System.out.println("Por favor, digite a senha do cartão novamente!");
+			senha = Integer.parseInt(scan.nextLine());
+			if(senha == 123) {
+			System.out.println();
+			System.out.println("------------------Saldo da Conta----------------------");
+		    System.out.println();
+			System.out.println("Seu saldo é__________________________________R$ " + (saldo  = (saldo + deposito - retirada)));
+			System.out.println();
+			}else{
+			System.out.println();
+			System.out.println("Senha Inválida!!!!");
+			System.out.println();
+			}
+			}else if (opc == 3){ 	
+			System.out.println("Por favor, digite a senha do cartão novamente!");
+			senha = Integer.parseInt(scan.nextLine());
+			if(senha == 123) {
+			System.out.println();
+			System.out.println("---------------------Extrato da Conta-------------------");
+			System.out.println();
+			System.out.println("Seu saldo é_______________________________R$ " + (saldo = (saldo + deposito - retirada)));
+			System.out.println();
+			System.out.println("_______________Histórico de Movimentação________________");
+			System.out.println();
+			System.out.println("Depósito na Conta_____________________________R$ " + deposito);
+			System.out.println("07/05/2022 às 15:00h");
+			System.out.println("Retirada da conta_____________________________RS " + retirada);
+			System.out.println("14/05/2022 às 21:33h");
+			System.out.println("Total em conta________________________________R$ " + saldo);
+			System.out.println();
+			}else{
+			System.out.println();
+			System.out.println("Senha Inválida!!!!");
+			System.out.println();
+		    }
+		    }else if(opc == 4) {
+			System.out.println("Por favor, digite a senha do cartão novamente!");
+			senha = Integer.parseInt(scan.nextLine());
+			if(senha == 123) {
+			System.out.println();
+			System.out.println("Digite o valor R$ ");
+			retirada = Float.parseFloat(scan.nextLine());
+			if(retirada <= saldo + deposito) {
+			System.out.println();
+			System.out.println("Escolha a nota: " + " R$ 20,00" + " R$ 50,00" + " R$ 100,00" + " R$ 200,00");
+			notas = Integer.parseInt(scan.nextLine());
+			System.out.println();
+			System.out.println("A nota escolhida foi: " + "R$ " + notas);
+			System.out.println();
+			if(notas == 20 || notas == 50 || notas == 100 || notas == 200) {
+			System.out.println("O valor informado para retirada foi: R$ " + retirada);
+			System.out.println();
+			System.out.println("Você recebeu: " + (retirada / notas) + " notas de R$ " + notas);
+			System.out.println();
+			System.out.println("Aguarde a contagem das notas!!!!");
+			System.out.println();
+			System.out.println("Favor, retire as notas!!!!");
+			System.out.println();
+			
+			//Concerta código
+			System.out.println("Saldo restante em conta é__________________R$ " + (saldo = (saldo + deposito - retirada)));
+			System.out.println();
+		    }
+			}else if (retirada > saldo + deposito) {
+			System.out.println();
+			System.out.println("Saldo insuficiente!!!!!!");
+		    }
+			}else{
+			System.out.println();
+		    System.out.println("Senha Inválida!!!!");
+	   	    System.out.println();
+			}
+	        }
+		    }else{
+			System.out.println("Senha Incorreta!!!");
+		    System.out.println();
+		    System.out.println("Por favor, insira o cartão novamente!!!");
+		    }
+            System.out.println();
+		    System.out.println("        Obrigado por usar o auto atendimento!!!!!");
+		    System.out.println();
+		    System.out.println("                   Volte Sempre!!!!!");
+		    System.out.println();
+            }
+       }
