@@ -1,0 +1,13 @@
+package modelo;
+
+public class Cartão implements Senha {
+
+	@Override
+	public void senha() {
+		System.out.println("     Obrigado por utilizar o caixa eletrônico!      ");
+		System.out.println();
+		System.out.println("Inserindo cartão na máquina...........................");
+		System.out.println("......................................................");
+		System.out.println("Cartão Inserido!!!!");
+	}
+}
