@@ -1,0 +1,14 @@
+package modelo;
+
+public class GerSenha {
+
+private Senha senha;
+	
+	public void setSenha(Senha senha) {
+		this.senha = senha;
+	}
+	
+    public void senha() {
+		senha.senha();
+    }
+}
