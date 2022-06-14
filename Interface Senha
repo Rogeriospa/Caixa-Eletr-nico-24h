@@ -1,0 +1,6 @@
+package modelo;
+
+public interface Senha {
+
+	void senha();
+}
